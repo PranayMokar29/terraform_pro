@@ -94,7 +94,7 @@ resource "aws_security_group" "allow-web" {
 ## Create node1 server ======================================================================
 resource "aws_instance" "node1-server" {
   ami               = "${var.AWS_AMI}"
-  instance_type     = "t2.micro"
+  instance_type     = "t3.micro"
   vpc_security_group_ids =[aws_security_group.allow-web.id]
   subnet_id              = aws_subnet.dev-subnet.id
   monitoring             = false
@@ -107,7 +107,7 @@ resource "aws_instance" "node1-server" {
 ## Create node2 server ======================================================================
 resource "aws_instance" "node2-server" {
   ami               = "${var.AWS_AMI}"
-  instance_type     = "t2.micro"
+  instance_type     = "t3.micro"
   vpc_security_group_ids =[aws_security_group.allow-web.id]
   subnet_id              = aws_subnet.dev-subnet.id
   monitoring             = false
@@ -120,7 +120,7 @@ resource "aws_instance" "node2-server" {
 ## Create node3 server ======================================================================
 resource "aws_instance" "node3-server" {
   ami               = "${var.AWS_AMI}"
-  instance_type     = "t2.micro"
+  instance_type     = "t3.micro"
   vpc_security_group_ids =[aws_security_group.allow-web.id]
   subnet_id              = aws_subnet.dev-subnet.id
   monitoring             = false
@@ -135,7 +135,7 @@ resource "aws_instance" "node3-server" {
 ## Create ansible server ======================================================================
 resource "aws_instance" "ansible-server" {
   ami               = "${var.AWS_AMI}"
-  instance_type     = "t2.micro"
+  instance_type     = "t3.micro"
   vpc_security_group_ids =[aws_security_group.allow-web.id]
   subnet_id              = aws_subnet.dev-subnet.id
   monitoring             = false
